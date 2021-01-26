@@ -41,8 +41,10 @@ public class Library {
             String key = book.getGenre();
             genreCheck.putIfAbsent(key, 0);
             genreCheck.put(key, genreCheck.get(key) + 1);
-            System.out.println(genreCheck);
         }
+    }
 
+    public HashMap<String, Integer> getBookGenreList(){
+        return this.genreCheck;
     }
 }

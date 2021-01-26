@@ -47,7 +47,7 @@ public class LibraryTest {
         library.addBookToCollection(book3);
         library.addBookToCollection(book4);
         library.addBookGenreToGenreCheck();
-
+        assertEquals("{Horror=1, Fantasy=1, Science Fiction=2}", library.getBookGenreList().toString());
     }
 
 }
