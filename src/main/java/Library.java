@@ -25,4 +25,11 @@ public class Library {
         return "Library collection is full";
     }
 
+    public boolean checkHasBookInCollection(Book book) {
+        return bookCollection.contains(book);
+    }
+
+    public void removeBookFromCollection(Book book) {
+        bookCollection.remove(book);
+    }
 }
