@@ -13,11 +13,12 @@ public class Borrower {
         return borrowedCollection.size();
     }
 
-    public void borrowsBookFromLibrary(Library library, Book book){
+    public String borrowsBookFromLibrary(Library library, Book book){
         boolean libraryHasBook = library.checkHasBookInCollection(book);
         if (libraryHasBook == true){
             library.removeBookFromCollection(book);
             this.borrowedCollection.add(book);
         }
+        return "Book is already booked out!";
     }
 }

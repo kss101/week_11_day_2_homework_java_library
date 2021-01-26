@@ -28,4 +28,9 @@ public class BorrowerTest {
         borrower.borrowsBookFromLibrary(library, book1);
         assertEquals(1, this.borrower.getNumberOfBorrowedBooksInCollection());
     }
+
+    @Test
+    public void cantBorrowBook(){
+        assertEquals("Book is already booked out!", this.borrower.borrowsBookFromLibrary(library, book3));
+    }
 }
