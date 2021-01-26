@@ -21,4 +21,10 @@ public class LibraryTest {
         assertEquals(0, this.library.getNumberOfBooksInCollection());
     }
 
+    @Test
+    public void canAddBookToCollection(){
+        library.addBookToCollection(book1);
+        assertEquals(1, this.library.getNumberOfBooksInCollection());
+    }
+
 }

@@ -11,6 +11,7 @@ public class Library {
         return bookCollection.size();
     }
 
-
-
+    public void addBookToCollection(Book book1) {
+        bookCollection.add(book1);
+    }
 }
