@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
     private ArrayList<Book> bookCollection;
     private int capacity;
+    private HashMap<String, Integer> genreCheck;
 
     public Library( int capacity){
         this.bookCollection = new ArrayList<>();
         this.capacity = capacity;
+        this.genreCheck = new HashMap();
     }
 
     public int getNumberOfBooksInCollection(){
@@ -31,5 +34,15 @@ public class Library {
 
     public void removeBookFromCollection(Book book) {
         bookCollection.remove(book);
+    }
+
+    public void addBookGenreToGenreCheck(){
+        for(Book book : this.bookCollection) {
+            String key = book.getGenre();
+            genreCheck.putIfAbsent(key, 0);
+            genreCheck.put(key, genreCheck.get(key) + 1);
+            System.out.println(genreCheck);
+        }
+
     }
 }

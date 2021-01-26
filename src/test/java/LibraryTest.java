@@ -6,14 +6,15 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     private Library library;
-    private Book book1, book2, book3;
+    private Book book1, book2, book3, book4;
 
     @Before
     public void before(){
-        library = new Library(2);
+        library = new Library(4);
         book1 = new Book("Anarch", "Dan Abnett", "Science Fiction");
-        book2 = new Book("13th Legion", "Guy Thorpe", "Science Fiction");
+        book2 = new Book("War Storm", "Nick Kyme", "Fantasy");
         book3 = new Book("Necronomicon", "H. P. Lovecraft", "Horror");
+        book4 = new Book("The War Master", "Dan Abnett", "Science Fiction");
     }
 
     @Test
@@ -37,6 +38,16 @@ public class LibraryTest {
         library.addBookToCollection(book1);
         library.addBookToCollection(book2);
         assertEquals("Library collection is full", this.library.addBookToCollection(book3));
+    }
+
+    @Test
+    public void checkAddBookGenreToGenreCheck(){
+        library.addBookToCollection(book1);
+        library.addBookToCollection(book2);
+        library.addBookToCollection(book3);
+        library.addBookToCollection(book4);
+        library.addBookGenreToGenreCheck();
+
     }
 
 }
