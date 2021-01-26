@@ -10,7 +10,7 @@ public class LibraryTest {
 
     @Before
     public void before(){
-        library = new Library();
+        library = new Library(2);
         book1 = new Book("Anarch", "Dan Abnett", "Science Fiction");
         book2 = new Book("13th Legion", "Guy Thorpe", "Science Fiction");
         book3 = new Book("Necronomicon", "H. P. Lovecraft", "Horror");
@@ -22,9 +22,21 @@ public class LibraryTest {
     }
 
     @Test
+    public void checkCapacity(){
+        assertEquals(2, library.getCapacity());
+    }
+
+    @Test
     public void canAddBookToCollection(){
         library.addBookToCollection(book1);
         assertEquals(1, this.library.getNumberOfBooksInCollection());
+    }
+
+    @Test
+    public void cantAddBookToCollection(){
+        library.addBookToCollection(book1);
+        library.addBookToCollection(book2);
+        assertEquals("Library collection is full", this.library.addBookToCollection(book3));
     }
 
 }
