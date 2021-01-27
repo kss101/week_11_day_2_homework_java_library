@@ -12,6 +12,9 @@ public class Library {
         this.genreCheck = new HashMap();
     }
 
+    /**
+     * Get the current total number of books in the library's book collection ArrayList<>.
+     */
     public int getNumberOfBooksInCollection(){
         return bookCollection.size();
     }
@@ -20,6 +23,9 @@ public class Library {
         return this.capacity;
     }
 
+    /**
+     * Add a book object to the library collection ArrayList<>
+     */
     public String addBookToCollection(Book book) {
         int collectionTotal = getNumberOfBooksInCollection();
         if (collectionTotal < getCapacity()) {

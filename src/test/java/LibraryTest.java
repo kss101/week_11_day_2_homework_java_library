@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class LibraryTest {
 
@@ -15,6 +16,11 @@ public class LibraryTest {
         book2 = new Book("War Storm", "Nick Kyme", "Fantasy");
         book3 = new Book("Necronomicon", "H. P. Lovecraft", "Horror");
         book4 = new Book("The War Master", "Dan Abnett", "Science Fiction");
+    }
+
+    @Test
+    public void canCreateLibrary(){
+        assertNotNull(library);
     }
 
     @Test
@@ -35,6 +41,7 @@ public class LibraryTest {
 
     @Test
     public void cantAddBookToCollection(){
+        library = new Library(1);
         library.addBookToCollection(book1);
         library.addBookToCollection(book2);
         assertEquals("Library collection is full", this.library.addBookToCollection(book3));

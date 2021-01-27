@@ -28,7 +28,7 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-    
+
     public void setGenre(String genre) {
         this.genre = genre;
     }
