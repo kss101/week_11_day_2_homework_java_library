@@ -41,10 +41,10 @@ public class LibraryTest {
 
     @Test
     public void cantAddBookToCollection(){
-        library = new Library(2);
-        library.addBookToCollection(book1);
-        library.addBookToCollection(book2);
-        assertEquals("Library collection is full", this.library.addBookToCollection(book3));
+        Library newLibrary = new Library(2);
+        newLibrary.addBookToCollection(book1);
+        newLibrary.addBookToCollection(book2);
+        assertEquals("Library collection is full", newLibrary.addBookToCollection(book3));
     }
 
     @Test
